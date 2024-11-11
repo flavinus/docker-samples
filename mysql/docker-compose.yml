@@ -1,0 +1,22 @@
+version: '3.3'
+services:
+  mysql: 
+    image: mysql:5.7
+    container_name: test-mysql-5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'test'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: 'password'
+    ports:
+      - 3306:3306
+
+# Internal client
+# docker exec -it mysql_db_1 mysql -uroot -p
+
+# External client
+# mysql -h 0.0.0.0 -P 3306 -u user -ppassword
+
+# Import dump
+# mysql db_name < backup-file.sql

@@ -1,0 +1,12 @@
+version: '3.3'
+services:
+  postgres-test:
+    image: postgres:15.3
+    container_name: flavinus-database
+    environment:
+      POSTGRES_DB: flavinus
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_HOST_AUTH_METHOD: trust
+    ports:
+      - 5432:5432
