@@ -2,7 +2,7 @@ version: '3.3'
 services:
   mysql: 
     image: mysql:5.7
-    container_name: test-mysql-5.7
+    container_name: flavinus-mysql
     restart: always
     environment:
       MYSQL_DATABASE: 'test'
@@ -13,7 +13,7 @@ services:
       - 3306:3306
 
 # Internal client
-# docker exec -it mysql_db_1 mysql -uroot -p
+# docker exec -it flavinus-mysql mysql -uroot -p
 
 # External client
 # mysql -h 0.0.0.0 -P 3306 -u user -ppassword

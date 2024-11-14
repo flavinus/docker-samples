@@ -2,7 +2,7 @@ version: '3.3'
 services:
   postgres-test:
     image: postgres:15.3
-    container_name: flavinus-database
+    container_name: flavinus-pgsql
     environment:
       POSTGRES_DB: flavinus
       POSTGRES_USER: postgres
@@ -10,3 +10,6 @@ services:
       POSTGRES_HOST_AUTH_METHOD: trust
     ports:
       - 5432:5432
+
+# External client
+# psql -h 0.0.0.0 -U postgres --dbname=flavinus
